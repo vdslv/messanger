@@ -59,7 +59,8 @@
 .image-block {
   position: relative;
   width: fit-content;
+  max-height: 45px;
 }
 .image-block:before {
-  @include checkBox(59%,-8%)
+  @include checkBox(67%,-8%)
 }

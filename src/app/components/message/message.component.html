@@ -1,0 +1,14 @@
+<div class="messages-block" #messages>
+  <div *ngFor="let message of contactData.history" [ngClass]="message.id ? 'message' : 'my-message'">
+    <img
+      *ngIf="message.id"
+      class="message-image"
+      src="{{ contactData.image }}"
+      alt="contact image"
+    />
+    <div class="message-info">
+      <p [ngClass]="message.id ? 'message-info__text' : 'my-message-info__text'">{{ message.message }}</p>
+      <p class="message-info__date">{{ message.date | date: "short" }}</p>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,21 @@
+<h2 class="title">Chats</h2>
+<div class="contact" *ngFor="let contact of contacts | sort" (click)="openChat(contact)">
+  <picture class="image-block">
+    <img
+      class="contact-image"
+      src="{{contact.image}}"
+      alt="contact image"
+    />
+  </picture>
+  <div class="contact-box">
+    <div class="contact-description">
+      <span>{{contact.name}}</span>
+      <span class="contact-description__message">
+        {{contact.history[contact.history.length - 1] ? contact.history[contact.history.length - 1].message : ''}}
+      </span>
+    </div>
+    <p class="contact-description__date">
+      {{ contact.history[contact.history.length - 1] ? (contact.history[contact.history.length - 1].date | date) : '' }}
+    </p>
+  </div>
+</div>

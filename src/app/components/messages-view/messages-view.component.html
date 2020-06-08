@@ -1,0 +1,17 @@
+<div class="messages">
+  <div class="receiver">
+    <picture class="image-block">
+      <img class="receiver-image" src="{{ contact.image }}" alt="profile image"/>
+    </picture>
+    <span class="receiver-name">{{ contact.name }}</span>
+  </div>
+  <div class="history">
+    <app-message [contactData]="contact"></app-message>
+  </div>
+  <div class="send">
+    <form class="input-message" [formGroup]="sendMessageForm" (keyup.enter)="sendMessage()">
+      <img class="send-img" src="/assets/icons/send.svg" alt="send message image" (click)="sendMessage()">
+      <input formControlName="message" type="text" class="send-message" placeholder="Type your message"/>
+    </form>
+  </div>
+</div>

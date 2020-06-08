@@ -1,0 +1,26 @@
+<div class="chat">
+  <div class="left-block">
+    <div class="left-block__top">
+      <picture class="image-block">
+        <img
+          class="user-image"
+          src="assets/images/santa.png"
+          alt="profile image"
+        />
+      </picture>
+      <div class="search">
+        <img class="search-image" src="assets/icons/search.svg" alt="search image">
+        <input
+          class="filter"
+          type="text"
+          placeholder="Search or start new chat"
+          [formControl]="searchContact"
+        />
+      </div>
+    </div>
+    <div class="left-block__bottom">
+      <app-contacts-list [contacts]="contacts"></app-contacts-list>
+    </div>
+  </div>
+  <app-messages-view></app-messages-view>
+</div>
